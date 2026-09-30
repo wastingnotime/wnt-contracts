@@ -13,6 +13,9 @@ objective, context references, explicit authority and limits, success and
 escalation conditions, and lineage. Every terminal run needs a structured
 outcome and evidence references. These meanings are shared across workflows;
 the AWS queue, sandbox, and GitHub implementation remain local to their owners.
+The job selects a named agent independently from its job type. Runtime is
+always bounded; token and dollar ceilings are supplied only when the chosen
+model harness can enforce them before they are crossed.
 
 ## Public Surface
 

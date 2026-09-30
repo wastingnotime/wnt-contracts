@@ -8,6 +8,8 @@ terminal result. `schemaVersion` selects the compatibility version.
 
 - `jobId` is stable across retries. Consumers use it to avoid duplicate PRs
   and terminal outcomes.
+- `agent` selects a named runtime registration. A worker rejects unknown names;
+  the name does not grant authority by itself. `jobType` describes the task.
 - `repository.revision` pins the source revision used as the job starting
   point. A worker checks it before editing.
 - `authority` is a request ceiling, not a permission grant. The runtime checks
@@ -15,6 +17,9 @@ terminal result. `schemaVersion` selects the compatibility version.
   reject a broader request.
 - `maxRuntimeSeconds` is a hard job limit, including sandbox startup. The
   transport may have a lower limit.
+- `maxTokens` and `maxCostUsd` are optional request ceilings for runtimes that
+  can enforce them. A worker must reject a supplied ceiling it cannot enforce;
+  it must not silently treat a measured-afterward value as a hard limit.
 - `inputs` and outcome references point to durable, access-controlled
   artifacts. Do not put credentials, tokens, personal data, source archives,
   or unrestricted prompts in queue messages or evidence fields.

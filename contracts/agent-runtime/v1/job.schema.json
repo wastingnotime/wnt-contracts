@@ -6,6 +6,7 @@
   "required": [
     "schemaVersion",
     "jobId",
+    "agent",
     "jobType",
     "repository",
     "objective",
@@ -19,6 +20,11 @@
   "properties": {
     "schemaVersion": { "const": "1" },
     "jobId": { "type": "string", "format": "uuid" },
+    "agent": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "maxLength": 100
+    },
     "jobType": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9.-]*$",
@@ -61,7 +67,7 @@
     "limits": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["maxRuntimeSeconds", "maxTokens", "maxCostUsd"],
+      "required": ["maxRuntimeSeconds"],
       "properties": {
         "maxRuntimeSeconds": { "type": "integer", "minimum": 60, "maximum": 43200 },
         "maxTokens": { "type": "integer", "minimum": 1 },
