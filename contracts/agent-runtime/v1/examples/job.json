@@ -1,12 +1,13 @@
 {
   "schemaVersion": "1",
   "jobId": "a5c92250-8018-4a0a-8330-ef109cc049fb",
+  "agent": "repository-coder",
   "jobType": "repository-change",
   "repository": {
     "url": "https://github.com/wastingnotime/infra-platform",
     "revision": "3688e6dfa42b7aee39e551c81e4b2a2fe42268df"
   },
-  "objective": "Update one reviewed repository contract and open a pull request.",
+  "objective": "Update one reviewed repository contract and produce a patch for review.",
   "inputs": [
     {
       "name": "issue",
@@ -15,16 +16,14 @@
   ],
   "authority": {
     "repositoryWrite": true,
-    "pullRequest": true,
+    "pullRequest": false,
     "productionChange": false
   },
   "limits": {
-    "maxRuntimeSeconds": 3600,
-    "maxTokens": 100000,
-    "maxCostUsd": 10
+    "maxRuntimeSeconds": 3000
   },
   "successConditions": [
-    "A pull request links the requested issue and records validation evidence."
+    "A reviewable patch links the requested issue and records execution evidence."
   ],
   "escalationConditions": [
     "The repository contract and source disagree on ownership."
