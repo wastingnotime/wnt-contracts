@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1",
+  "jobId": "a5c92250-8018-4a0a-8330-ef109cc049fb",
+  "correlationId": "84d6617a-5e10-439e-9dbc-6d518d721499",
+  "status": "succeeded",
+  "summary": "Opened a reviewed repository contract change.",
+  "finishedAt": "2026-09-30T13:30:00Z",
+  "evidenceRefs": [
+    "https://example.invalid/evidence/run-1"
+  ],
+  "artifactRefs": [
+    "https://example.invalid/pull/1"
+  ]
+}

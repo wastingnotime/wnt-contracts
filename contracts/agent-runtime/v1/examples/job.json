@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1",
+  "jobId": "a5c92250-8018-4a0a-8330-ef109cc049fb",
+  "jobType": "repository-change",
+  "repository": {
+    "url": "https://github.com/wastingnotime/infra-platform",
+    "revision": "3688e6dfa42b7aee39e551c81e4b2a2fe42268df"
+  },
+  "objective": "Update one reviewed repository contract and open a pull request.",
+  "inputs": [
+    {
+      "name": "issue",
+      "uri": "https://github.com/wastingnotime/infra-platform/issues/692"
+    }
+  ],
+  "authority": {
+    "repositoryWrite": true,
+    "pullRequest": true,
+    "productionChange": false
+  },
+  "limits": {
+    "maxRuntimeSeconds": 3600,
+    "maxTokens": 100000,
+    "maxCostUsd": 10
+  },
+  "successConditions": [
+    "A pull request links the requested issue and records validation evidence."
+  ],
+  "escalationConditions": [
+    "The repository contract and source disagree on ownership."
+  ],
+  "correlationId": "84d6617a-5e10-439e-9dbc-6d518d721499"
+}
